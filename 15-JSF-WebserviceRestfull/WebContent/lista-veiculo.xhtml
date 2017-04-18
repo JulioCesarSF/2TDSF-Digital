@@ -1,35 +1,36 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"> 
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
 
-<h:head>
-	<h:outputStylesheet library="css" name="bootstrap.min.css"/>
-</h:head> 
-<body> 
-<div class="container">
-	<h1>Veículos na promoção</h1>
-	<h:dataTable styleClass="table" value="#{listaVeiculoBean.lista}" var="v">
-		<h:column>
-			<f:facet name="header">Código</f:facet>
+<ui:composition template="_template.xhtml">
+	<ui:define name="conteudo">
+		<div class="page-header">
+			<h1>Veículos na promoção</h1>
+		</div>
+		<h:dataTable styleClass="table" value="#{listaVeiculoBean.lista}"
+			var="v">
+			<h:column>
+				<f:facet name="header">Código</f:facet>
 			#{v.codigo}
 		</h:column>
-		<h:column>
-			<f:facet name="header">Marca</f:facet>
+			<h:column>
+				<f:facet name="header">Marca</f:facet>
 			#{v.marca}
 		</h:column>
-		<h:column>
-			<f:facet name="header">Modelo</f:facet>
+			<h:column>
+				<f:facet name="header">Modelo</f:facet>
 			#{v.modelo}
 		</h:column>
-		<h:column>
-			<f:facet name="header">Preço</f:facet>
+			<h:column>
+				<f:facet name="header">Preço</f:facet>
 			#{v.preco}
 		</h:column>
-	</h:dataTable>
-</div>
-</body> 
+		</h:dataTable>
+		<h:link outcome="cadastro-veiculo" styleClass="btn btn-primary">Cadastrar Novo</h:link>
+	</ui:define>
+</ui:composition>
 </html>
 
 
